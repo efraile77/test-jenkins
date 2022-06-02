@@ -26,7 +26,7 @@ RUN apt-get install maven -y
    
 
 WORKDIR /home
-COPY files/ ./
+
 
 EXPOSE 8080
 
