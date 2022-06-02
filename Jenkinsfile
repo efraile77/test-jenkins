@@ -13,7 +13,7 @@ pipeline {
         }    
     stage('Cloning our Git') {
       steps {
-      git 'https://github.com/efraile77/test-jenkins.git'
+      git branch: 'dev', credentialsId: '12a14005-8a58-4825-bf54-f6ab05674f78', url: 'https://github.com/efraile77/test-jenkins'
       }
     }
     stage('Docker Build') {
