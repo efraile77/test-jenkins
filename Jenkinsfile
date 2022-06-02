@@ -12,6 +12,7 @@ pipeline {
       }
     }
     stage('Docker Build') {
+      agent any  
       steps{
         sh 'docker build -t efraile77/test-image:latest .'
         
