@@ -8,10 +8,14 @@ pipeline {
   stages {
     stage('SCM Checkout') {
       steps {
-        git branch: 'dev', url: 'https://github.com/efraile77/test-jenkins.git'
+        git branch: 'dev', credentialsId: registryCredential, url: 'https://github.com/efraile77/test-jenkins.git'
             }
         }    
-
+    stage('Cloning our Git') {
+      steps {
+      git 'https://github.com/efraile77/test-jenkins.git'
+      }
+    }
     stage('Docker Build') {
       agent any  
       steps{
