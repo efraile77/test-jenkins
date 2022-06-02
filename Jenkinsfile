@@ -11,11 +11,7 @@ pipeline {
         git branch: 'dev', url: 'https://github.com/efraile77/test-jenkins.git'
             }
         }    
-    stage('Cloning our Git') {
-      steps {
-      git 'https://github.com/efraile77/test-jenkins.git'
-      }
-    }
+
     stage('Docker Build') {
       agent any  
       steps{
