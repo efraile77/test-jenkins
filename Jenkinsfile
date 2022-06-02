@@ -27,7 +27,10 @@ pipeline {
         label 'dev'
         args '-v /tmp:/tmp'
          }
-      }
-    } 
-  }     
+      }  
+      steps {
+          sh 'docker build -t $image .'
+            }
+        }    
+  }
 }  
