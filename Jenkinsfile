@@ -7,7 +7,7 @@ pipeline {
   agent {
         docker {
             image "registry.app.corpintra.net/ddca-service/ddca-service:[:TAG]"
-            registryUrl 'https://registry.app.corpintra.net'
+            registryUrl 'https://github.com'
             registryCredentialsId 'ddca_docker_repo'
             args '-u root -v /var/run/docker.sock:/var/run/docker.sock -v /home/ubuntu/.kube:/root/.kube  --net="host"'
         }
