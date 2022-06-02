@@ -28,5 +28,6 @@ pipeline {
         args '-v /tmp:/tmp'
          }
       }
-    }    
+    } 
+  }     
 }  
