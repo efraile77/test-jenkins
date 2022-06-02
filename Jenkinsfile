@@ -5,16 +5,6 @@ pipeline {
     dockerImage = ''
   }
 
-  agent {
-    dockerfile {
-        filename 'Dockerfile.build'
-        dir 'build'
-        label 'my-test-label'
-        registryUrl 'https://registry.app.corpintra.net'
-        args '-v /tmp:/tmp'
-    }
-}  
-
     options {
         //TODO: is it possible to set the timeout depending on the number of deployable models?
         timeout(time: 150, unit: 'MINUTES')
@@ -23,6 +13,14 @@ pipeline {
 
   stages {
     stage('build') {
+     agent {
+      dockerfile {
+        filename 'Dockerfile.build'
+        dir 'build'
+        label 'my-test-label'
+        args '-v /tmp:/tmp'
+         }
+      }  
       steps {
           sh 'docker build -t $image .'
             }
